@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            IMDb AI Sentiment Analyzer
+        </title>
+        <link rel="preconnect"
+            href="https://fonts.googleapis.com">
+        <link rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    </head>
+    
+    <body>
+        <div class="background-glow">
+        </div>
+        <nav class="navbar">
+            <div class="logo">
+                CineSense
+            </div>
+            <div class="nav-links">
+                <a href="#features">
+                    Features
+                </a>
+                <a href="#models">
+                    Models
+                </a>
+                <a href="#metrics">
+                    Metrics
+                </a>
+                <!-- <a href="https://github.com/anantj09/CineSense" target="https://github.com/anantj09/CineSense">
+                    GitHub
+                </a> -->
+            </div>
+        </nav>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>
+                    AI Powered
+                    <span>
+                        Movie Sentiment
+                    </span>
+                    Analyzer
+                </h1>
+                <p>
+                    A NLP system combining Deep Learning, Transformers, Hyperparameter
+                    Optimization, and Real-Time Sentiment Analysis.
+                </p>
+                <a href="/dashboard" class="launch-btn">
+                    Launch Analyzer
+                </a>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb1">
+                </div>
+                <div class="orb orb2">
+                </div>
+                <div class="ai-panel">
+                    <div class="panel-header">
+                        LIVE MODEL ANALYTICS
+                    </div>
+                    <div class="panel-body">
+                        <div class="metric-card">
+                            <h2>91.7%</h2>
+                            <p>DistilBERT (Accuracy)</p>
+                        </div>
+                        <div class="metric-card">
+                            <h2>
+                                5
+                            </h2>
+                            <p>
+                                NLP Architectures
+                            </p>
+                        </div>
+                        <div class="metric-card">
+                            <h2>
+                                Real-Time
+                            </h2>
+                            <p>
+                                Inference Pipeline
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features" class="features-section">
+            <h2>
+                Core Intelligence Modules
+            </h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>
+                        Transformer NLP
+                    </h3>
+                    <p>
+                        DistilBERT-powered contextual sentiment understanding.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>
+                        RNN Architectures
+                    </h3>
+                    <p>
+                        LSTM, GRU, BiLSTM, and sequential deep learning pipelines.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>
+                        Hyperparameter Tuning
+                    </h3>
+                    <p>
+                        Optuna-based optimization and intelligent experiment tracking.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>
+                        AI Insights Engine
+                    </h3>
+                    <p>
+                        Real-time sentiment interpretation and intelligent inference reporting.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="models" class="models-section">
+            <h2>
+                Model Benchmark Suite
+            </h2>
+            <div class="model-strip">
+                <div class="model-card">
+                    <h3>
+                        GRU
+                    </h3>
+                    <span>
+                        88.3% Accuracy
+                    </span>
+                </div>
+                <div class="model-card">
+                    <h3>
+                        LSTM
+                    </h3>
+                    <span>
+                        84.9% Accuracy
+                    </span>
+                </div>
+                <div class="model-card">
+                    <h3>
+                        BiLSTM
+                    </h3>
+                    <span>
+                        85.3% Accuracy
+                    </span>
+                </div>
+                <div class="model-card transformer">
+                    <h3>
+                        DistilBERT
+                    </h3>
+                    <span>
+                        91.7% Accuracy
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section id="metrics" class="metrics-section">
+            <div class="metrics-container">
+                <div class="stat-box">
+                    <h2>
+                        25K+
+                    </h2>
+                    <p>
+                        IMDb Reviews Processed
+                    </p>
+                </div>
+                <div class="stat-box">
+                    <h2>
+                        Optuna
+                    </h2>
+                    <p>
+                        Automated Tuning Engine
+                    </p>
+                </div>
+                <div class="stat-box">
+                    <h2>
+                        Flask
+                    </h2>
+                    <p>
+                        Production Web Application
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer class="app-footer">
+            <span>CineSense</span>
+            <span class="footer-dot">•</span>
+            <span>Built with Flask & Deep Learning</span>
+            <span class="footer-dot">•</span>
+            <a href="/dashboard" class="footer-link">Open app →</a>
+        </footer>
+        <script src="{{ url_for('static', filename='js/index.js') }}">
+        </script>
+    </body>
+
+</html>

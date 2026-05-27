@@ -1,0 +1,25 @@
+batch_size: 32
+epochs: 5
+validation_split: 0.2
+
+optimizer: adam
+loss: binary_crossentropy
+
+metrics:
+  - accuracy
+
+early_stopping:
+  monitor: val_loss
+  patience: 3
+  restore_best_weights: true
+
+reduce_lr:
+  monitor: val_loss
+  factor: 0.5
+  patience: 2
+
+distilbert_epochs: 3
+distilbert_batch_size: 4
+
+hyper_epochs: 3
+hyper_btach_size: 16

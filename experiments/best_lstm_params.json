@@ -1,0 +1,7 @@
+{
+    "batch_size": 32,
+    "embedding_dim": 128,
+    "units": 64,
+    "dropout": 0.2652491584786059,
+    "learning_rate": 0.002994520098495261
+}

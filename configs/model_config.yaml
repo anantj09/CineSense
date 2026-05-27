@@ -1,0 +1,25 @@
+embedding_dim: 128
+max_features: 10000
+max_sequence_length: 500
+
+simple_rnn:
+  units: 128
+  dropout: 0.3
+  recurrent_dropout: 0.3
+
+lstm:
+  units: 128
+  dropout: 0.3
+
+gru:
+  units: 128
+  dropout: 0.3
+
+bilstm:
+  units: 128
+  dropout: 0.3
+
+cnn_text:
+  filters: 128
+  kernel_size: 5
+  dropout: 0.3

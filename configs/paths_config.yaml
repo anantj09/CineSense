@@ -1,0 +1,10 @@
+artifacts_dir: artifacts/
+
+models_dir: artifacts/models/
+tokenizer_dir: artifacts/tokenizer/
+plots_dir: artifacts/plots/
+checkpoints_dir: artifacts/checkpoints/
+optuna_plots_dir: artifacts/optuna_plots/
+distilbert_model_dir: artifacts/distilbert_model/
+
+logs_dir: logs/
