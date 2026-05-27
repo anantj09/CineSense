@@ -21,6 +21,8 @@
 
 CineSense is a deep learning powered movie review sentiment analysis platform that classifies movie reviews as **Positive** or **Negative** using multiple NLP architectures ranging from classical recurrent neural networks to transformer based models.
 
+**Live App:** [Access CineSense on Hugging Face Spaces](https://huggingface.co/spaces/anantj09/CineSense)
+
 The project combines:
 
 - Deep Learning for NLP
@@ -79,7 +81,7 @@ The system was trained on the IMDB Movie Reviews Dataset and supports multiple m
 
 # 🖥️ UI Screenshots
 
-## 🏠 Homepage
+## Homepage
 
 <p align="center">
   <img src="assets/screenshots/ui_mainpage_screenshot.png" width="95%">
@@ -87,7 +89,7 @@ The system was trained on the IMDB Movie Reviews Dataset and supports multiple m
 
 ---
 
-## 📊 Dashboard
+## Dashboard
 
 <p align="center">
   <img src="assets/screenshots/ui_dashboard_screenshot.png" width="95%">
@@ -97,40 +99,23 @@ The system was trained on the IMDB Movie Reviews Dataset and supports multiple m
 
 # 📈 Training & Evaluation Visualizations
 
-## 🔥 Model Accuracy Comparison
+## Model Convergence Metrics (DistilBERT & GRU)
 
 <p align="center">
-  <img src="assets/plots/model_comparison.png" width="80%">
+  <img src="assets/plots/DistilBERT_accuracy.png" width="48%" alt="DistilBERT Accuracy Curve">
+  <img src="assets/plots/GRU_accuracy.png" width="48%" alt="GRU Accuracy Curve">
 </p>
 
 ---
 
-## 🤖 DistilBERT Accuracy Curve
+## Benchmarks & GRU Hyperparameter Importance
 
 <p align="center">
-  <img src="assets/plots/DistilBERT_accuracy.png" width="75%">
-</p>
-
----
-
-## ⚡ GRU Accuracy Curve
-
-<p align="center">
-  <img src="assets/plots/GRU_accuracy.png" width="75%">
-</p>
-
----
-
-# 🎯 Hyperparameter Optimization
-
-Hyperparameter tuning was performed using **Optuna** to optimize recurrent architectures.
-
-<p align="center">
-  <img src="assets/screenshots/oputna_model_hyperparamters_importance.png" width="80%">
+  <img src="assets/plots/model_comparison.png" width="48%" alt="Model Accuracy Comparison">
+  <img src="assets/screenshots/oputna_model_hyperparamters_importance.png" width="48%" alt="Optuna Parameter Importance">
 </p>
 
 Optimized parameters included:
-
 - Learning Rate
 - Dropout
 - Dense Units
@@ -281,28 +266,28 @@ Training acceleration techniques:
 Build Docker Image:
 
 ```bash
-docker build -t cinesense-ai .
+docker build -t cinesense .
 ```
 
 Run Container:
 
 ```bash
-docker run -p 5000:5000 cinesense-ai
+docker run -p 7860:7860 cinesense
 ```
 
 ---
 
 # ▶️ Installation & Setup
 
-## 1️⃣ Clone Repository
+## Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_LINK
+git clone https://github.com/anantj09/CineSense
 ```
 
 ---
 
-## 2️⃣ Create Environment
+## Create Environment
 
 ```bash
 conda create -n imdb_env python=3.10
@@ -311,7 +296,7 @@ conda activate imdb_env
 
 ---
 
-## 3️⃣ Install Requirements
+## Install Requirements
 
 ```bash
 pip install -r requirements.txt
@@ -319,7 +304,7 @@ pip install -r requirements.txt
 
 ---
 
-## 4️⃣ Run Application
+## Run Application
 
 ```bash
 python app.py
@@ -332,7 +317,7 @@ python app.py
 Open browser:
 
 ```bash
-http://127.0.0.1:5000
+http://127.0.0.1:7860
 ```
 
 ---
