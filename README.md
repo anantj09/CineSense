@@ -84,7 +84,7 @@ The system was trained on the IMDB Movie Reviews Dataset and supports multiple m
 ## Homepage
 
 <p align="center">
-  <img src="assets/screenshots/ui_mainpage_screenshot.png" width="95%">
+  <img src="assets/screenshots/ui_mainpage_screenshot.png" width="75%">
 </p>
 
 ---
@@ -92,7 +92,7 @@ The system was trained on the IMDB Movie Reviews Dataset and supports multiple m
 ## Dashboard
 
 <p align="center">
-  <img src="assets/screenshots/ui_dashboard_screenshot.png" width="95%">
+  <img src="assets/screenshots/ui_dashboard_screenshot.png" width="75%">
 </p>
 
 ---
