@@ -1,73 +1,24 @@
-# 🎬 CineSense — Intelligent Movie Review Sentiment Analysis
-
-<!-- <p align="center">
-  <img src="assets/screenshots/ui_mainpage_screenshot.png" width="90%">
-</p> -->
-
-<p align="center">
+# 🎬 CineSense: Intelligent Movie Review Sentiment Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-orange)
 ![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
 ![Flask](https://img.shields.io/badge/Flask-WebApp-black)
 ![CUDA](https://img.shields.io/badge/GPU-CUDA-green)
+![Deployment](https://img.shields.io/badge/Deployment-HuggingFace_Spaces-orange)
 ![License](https://img.shields.io/badge/License-MIT-purple)
-
-</p>
 
 ---
 
 # 📌 Overview
 
-CineSense is a deep learning powered movie review sentiment analysis platform that classifies movie reviews as **Positive** or **Negative** using multiple NLP architectures ranging from classical recurrent neural networks to transformer based models.
+CineSense is a deep learning movie review sentiment analysis platform that classifies text as **Positive** or **Negative**. It serves as a production-grade template for config-driven, end-to-end NLP pipelines by combining:
+* **Multi-Model Benchmarking**: Evaluating recurrent networks (LSTM, GRU, BiLSTM) against state-of-the-art transformer architectures (`distilbert-base-uncased`).
+* **GPU-Accelerated Training**: Utilizing NVIDIA CUDA & cuDNN with mixed-precision training and XLA compilation to maximize speed.
+* **Optuna Hyperparameter Tuning**: Optimizing dropout, learning rate, and layer sizes automatically.
+* **Interactive Web Interface**: A modern futuristic Flask application showcasing real-time predictions, classification probabilities, and dynamic model benchmarks.
 
 **Live App:** [Access CineSense on Hugging Face Spaces](https://huggingface.co/spaces/anantj09/CineSense)
-
-The project combines:
-
-- Deep Learning for NLP
-- Transformer Models
-- GPU Accelerated Training
-- Flask Deployment
-- Modern Futuristic Frontend
-- Config Driven ML Architecture
-- Experiment Tracking & Visualization
-
-The system was trained on the IMDB Movie Reviews Dataset and supports multiple models including:
-
-- LSTM
-- GRU
-- BiLSTM
-- DistilBERT Transformer
-
----
-
-# 🚀 Features
-
-- Multiple NLP Deep Learning Models  
-- Transformer Based Sentiment Analysis  
-- GPU Accelerated TensorFlow Training  
-- DistilBERT Transformer Integration  
-- Modern UI  
-- Flask Based Deployment  
-- Config Driven Architecture  
-- Experiment Tracking  
-- Training Visualizations  
-- Hyperparameter Tuning using Optuna  
-- Unified Prediction Pipeline  
-- Docker Support  
-- Production Ready Project Structure
-
----
-
-# 🧠 Models Implemented
-
-| Model | Type | Accuracy |
-|---|---|---|
-| LSTM | Recurrent Neural Network | 84.9% |
-| GRU | Gated Recurrent Unit | 88.3% |
-| BiLSTM | Bidirectional LSTM | 85.3% |
-| DistilBERT | Transformer | 91.7% |
 
 ---
 
@@ -81,46 +32,20 @@ The system was trained on the IMDB Movie Reviews Dataset and supports multiple m
 
 # 🖥️ UI Screenshots
 
-## Homepage
-
 <p align="center">
-  <img src="assets/screenshots/ui_mainpage_screenshot.png" width="75%">
-</p>
-
----
-
-## Dashboard
-
-<p align="center">
-  <img src="assets/screenshots/ui_dashboard_screenshot.png" width="75%">
+  <img src="assets/screenshots/ui_mainpage_screenshot.png" width="48%" alt="CineSense Homepage">
+  <img src="assets/screenshots/ui_dashboard_screenshot.png" width="48%" alt="CineSense Dashboard">
 </p>
 
 ---
 
 # 📈 Training & Evaluation Visualizations
 
-## Model Convergence Metrics (DistilBERT & GRU)
+## Performance Benchmarks
 
 <p align="center">
-  <img src="assets/plots/DistilBERT_accuracy.png" width="48%" alt="DistilBERT Accuracy Curve">
-  <img src="assets/plots/GRU_accuracy.png" width="48%" alt="GRU Accuracy Curve">
+  <img src="assets/plots/model_comparison.png" width="75%" alt="Model Accuracy Comparison">
 </p>
-
----
-
-## Benchmarks & GRU Hyperparameter Importance
-
-<p align="center">
-  <img src="assets/plots/model_comparison.png" width="48%" alt="Model Accuracy Comparison">
-  <img src="assets/screenshots/oputna_model_hyperparamters_importance.png" width="48%" alt="Optuna Parameter Importance">
-</p>
-
-Optimized parameters included:
-- Learning Rate
-- Dropout
-- Dense Units
-- Recurrent Units
-- Batch Size
 
 ---
 
@@ -179,85 +104,30 @@ models_dir: artifacts/models/
 plots_dir: artifacts/plots/
 ```
 
-This makes the pipeline:
-- reusable
-- modular
-- scalable
-- production oriented
-
 ---
 
 # 🧪 Dataset
 
-Dataset Used:
-- IMDB Movie Reviews Dataset
-
-Source:
-- Keras Datasets API
-
-The dataset contains:
-- 50,000 movie reviews
-- Binary sentiment labels
-- Balanced positive and negative reviews
+The system is trained and validated on the **IMDB Movie Reviews Dataset** (accessed via the Keras Datasets API). The corpus consists of **50,000 highly polar movie reviews** (split evenly between 25,000 training and 25,000 validation samples) with pre-balanced positive and negative sentiment labels.
 
 ---
 
-# 🧠 Transformer Integration
+# ⚡ GPU-Accelerated Transformer Integration
 
-The project integrates:
-- HuggingFace Transformers
-- DistilBERT
-- TensorFlow Transformers Pipeline
-
-Features:
-- Tokenization
-- Attention Masking
-- GPU Accelerated Training
-- Mixed Precision Training
-- XLA Optimization
+CineSense integrates HuggingFace's **DistilBERT** with a custom TensorFlow training pipeline. To maximize performance and speed on my local hardware (NVIDIA RTX 3050 Laptop GPU under WSL2 Ubuntu), the training environment leverages:
+* **Tokenization & Masking**: Efficient subword tokenizers with attention masking.
+* **Mixed Precision Training**: Using FP16 mixed precision inside Keras to reduce GPU VRAM utilization and accelerate tensor processing.
+* **XLA Compilation**: Compiling critical computation graphs into optimized machine instructions using the TensorFlow XLA compiler.
+* **Hardware Acceleration**: High-performance CUDA and cuDNN libraries mapped directly to the active GPU.
 
 ---
 
-# ⚡ GPU Training Setup
+## 🧩 Technical Stack
 
-The models were trained using:
-
-- NVIDIA RTX 3050 Laptop GPU
-- CUDA
-- cuDNN
-- TensorFlow GPU
-- WSL2 Ubuntu Environment
-
-Training acceleration techniques:
-- Mixed Precision Training
-- XLA Compilation
-- CUDA Memory Optimization
-
----
-
-# 🧩 Tech Stack
-
-## Backend
-- Python
-- Flask
-- TensorFlow
-- HuggingFace Transformers
-
-## Frontend
-- HTML
-- CSS
-- JavaScript
-
-## ML & NLP
-- LSTM
-- GRU
-- BiLSTM
-- DistilBERT
-
-## Visualization
-- Matplotlib
-- Seaborn
-- Optuna
+* **Backend Gateway**: Python, Flask, Gunicorn
+* **Deep Learning Frameworks**: TensorFlow 2.x, PyTorch (Hugging Face Transformers API for `distilbert-base-uncased` sentiment analysis)
+* **Visualization & Tuning**: Matplotlib, Seaborn, Optuna hyperparameter tracking
+* **Classifiers**: LSTM, GRU, BiLSTM, DistilBERT Transformer
 
 ---
 
@@ -279,43 +149,31 @@ docker run -p 7860:7860 cinesense
 
 # ▶️ Installation & Setup
 
-## Clone Repository
+Follow these steps to set up and launch the CineSense workspace locally:
 
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/anantj09/CineSense
 ```
 
----
-
-## Create Environment
-
+### 2. Create the Virtual Environment
 ```bash
-conda create -n imdb_env python=3.10
+conda create -n imdb_env python=3.10 -y
 conda activate imdb_env
 ```
 
----
-
-## Install Requirements
-
+### 3. Install Package Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Run Application
-
+### 4. Run the Flask Web Application
 ```bash
 python app.py
 ```
 
----
-
-# 🌐 Launch Application
-
-Open browser:
-
+### 5. Launch in the Browser
+Open your browser and navigate to:
 ```bash
 http://127.0.0.1:7860
 ```
@@ -335,40 +193,15 @@ http://127.0.0.1:7860
 
 # 🔮 Future Work
 
-Possible future enhancements:
-
-- LLM Based AI Insights Panel
-- Explainable AI Sentiment Reasoning
-- Attention Visualization
-- Ensemble Learning
-- Multilingual Sentiment Analysis
-- Speech-to-Review Sentiment Analysis
-- Real-Time Streaming API
-- User Authentication System
-- Sentiment Trend Analytics Dashboard
-- Fine Tuned RoBERTa/BERT Models
+* **Explainable AI (XAI)**: Integrating attention map visualization to explain which words influenced the models' positive or negative sentiment decisions.
+* **LLM-Powered Insights**: Embedding LLMs to generate real-time constructive reasoning and feedback over predicted reviews.
+* **Model Ensembling**: Combining recurrent (GRU/BiLSTM) and transformer (DistilBERT) probabilities to form a high-accuracy voting ensemble.
+* **Multilingual & Audio Support**: Extending classification pipelines to process non-English reviews and direct speech audio files.
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Credits & Socials
 
-Developed by:
-
-**Anant Jain**
-
----
-
-# ⭐ Acknowledgements
-
-- TensorFlow
-- HuggingFace
-- Keras
-- Optuna
-- Flask
-- IMDB Dataset
-
----
-
-# 📜 License
-
-This project is intended for educational and portfolio purposes.
+* **Developer**: [Anant Jain](https://github.com/anantj09)
+* **Acknowledgements**: Grateful to the Keras Datasets API for the standard IMDB Movie Reviews Dataset, alongside TensorFlow, Keras, HuggingFace Transformers, and Optuna.
+* **License**: MIT License - Created for educational, research, and portfolio purposes.
